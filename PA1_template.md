@@ -1,3 +1,12 @@
+Analyzing personal movement using activity monitoring devices
+-------------------------------------------------------------
+
+##### reproducible research course - project 1 | coursera
+
+------------------------------------------------------------------------
+
+###### Mirzarashid Abbasov, almaty, 2017
+
 Synopsis
 --------
 
