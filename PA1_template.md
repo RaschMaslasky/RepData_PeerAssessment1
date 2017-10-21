@@ -5,11 +5,9 @@ There are many ways and possible to collect a large amount of data about
 personal movement using activity monitoring devices. These type of
 devices are part of the “quantified self” movement – a group of
 enthusiasts who take measurements about themselves regularly to improve
-their health, to find patterns in their behavior.
-
-This assignment makes use of data from a personal activity monitoring
-device. The data for this assignment can be downloaded from: [Dataset:
-Activity monitoring
+their health, to find patterns in their behavior. This assignment makes
+use of data from a personal activity monitoring device. The data for
+this assignment can be downloaded from: [Dataset: Activity monitoring
 data](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip)
 
 The dataset variables included:
@@ -93,10 +91,9 @@ Data processing & results
 
 ![](PA1_template_files/figure-markdown_strict/question%202-1.png)
 
-What is mean total number of steps taken per day?
--------------------------------------------------
+### What is mean total number of steps taken per day?
 
-### 3. Mean and median number of steps taken each day
+#### 3. Mean and median number of steps taken each day
 
     ## calculate mean of steps taken each day
     mean <- mean(result.steps$total.steps)
@@ -110,10 +107,9 @@ What is mean total number of steps taken per day?
 
     ## [1] 10765
 
-What is the average daily activity pattern?
--------------------------------------------
+### What is the average daily activity pattern?
 
-### 4. Time series plot of the average number of steps taken
+#### 4. Time series plot of the average number of steps taken
 
     ##select steps & date from data.frame
     result.mean <- temp %>% select(steps, interval) %>% 
@@ -133,7 +129,7 @@ What is the average daily activity pattern?
 
 ![](PA1_template_files/figure-markdown_strict/question%204-1.png)
 
-### 5. The 5-minute interval that, on average, contains the maximum number of steps
+#### 5. The 5-minute interval that, on average, contains the maximum number of steps
 
     result.max <- temp %>% select(steps, interval) %>% 
             ## exclude all NA values from steps column
@@ -154,10 +150,9 @@ What is the average daily activity pattern?
 
     ## [1] 10927
 
-Imputing missing values
------------------------
+### Imputing missing values
 
-### 6. Code to describe and show a strategy for imputing missing data
+#### 6. Code to describe and show a strategy for imputing missing data
 
 Use approximation method to fill missing data for example to use
 median() or mean()
@@ -177,10 +172,9 @@ median() or mean()
 
     ## [1] 0
 
-Are there differences in activity patterns between weekdays and weekends
-------------------------------------------------------------------------
+### Are there differences in activity patterns between weekdays and weekends
 
-### 7. Histogram of the total number of steps taken each day after missing values are imputed
+#### 7. Histogram of the total number of steps taken each day after missing values are imputed
 
     ##select steps & date from data.frame
     result.steps <- temp %>% select(steps, date) %>% 
@@ -199,7 +193,7 @@ Are there differences in activity patterns between weekdays and weekends
 
 ![](PA1_template_files/figure-markdown_strict/question%207-1.png)
 
-### 8. Panel plot comparing the average number of steps taken per 5-minute interval across weekdays and weekends
+#### 8. Panel plot comparing the average number of steps taken per 5-minute interval across weekdays and weekends
 
     ##weekdays as a decimal number(1-7, Monday is 1)
 
@@ -246,5 +240,10 @@ Are there differences in activity patterns between weekdays and weekends
     grid.arrange(g.workdays, g.weekends, ncol=2)
 
 ![](PA1_template_files/figure-markdown_strict/question%208-1.png)
+
+##### Conclusion
+
+As you can see from the figure above, activity on weekends is higher
+than on working days.
 
 ###### Mirzarashid Abbasov, almaty, 2017
